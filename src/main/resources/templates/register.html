@@ -18,13 +18,14 @@
         }
 
         .navbar-custom {
-            background-color: #4b4b4b;
-            color: white; /* Gris gold */
+            background: linear-gradient(to right, #FFFFFF33, #0000FF);
+            color: white;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
         }
+
 
         .navbar-custom a {
             color: #ffffff !important;
@@ -52,16 +53,19 @@
 
         .container {
             max-width: 450px;
-            padding: 30px;
+            padding: 8px;
             background-color: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow:
+                    8px 8px 10px 0px deeppink,
+                    -5px -5px 5px 0px blue,
+                    5px 5px 15px 0px yellow;
             position: relative;
             text-align: center;
         }
 
         .container h2 {
-            color: #4b4b4b;
+            color: #0000FF;
             margin-bottom: 20px;
             font-weight: bold;
             font-family: 'Pacifico', cursive;
@@ -74,7 +78,7 @@
         }
 
         .form-group label {
-            color: #fff;
+            color: #0000FF;
             text-align: left;
             display: block;
             font-weight: bold;
@@ -82,18 +86,20 @@
         }
 
         .form-group input {
-            border: 1px solid #ffd1dc;
+            border-radius: 30px;
             background-color: #fff;
             color: #b76e79;
             font-weight: bold;
         }
 
         .btn {
-            background-color: #ffd1dc;
-            border: none;
-            color: black;
+            background-color: #0000FF;
+            border-radius: 100px;
+            color: white;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100px;
+            margin: auto;
         }
 
         .btn:hover {
@@ -102,7 +108,7 @@
         }
 
         .custom-link {
-            color: black;  /* Noir */
+            color: blue;  /* Noir */
             text-decoration: none;
             font-weight: bold;
         }
@@ -113,9 +119,9 @@
         }
 
         .footer {
-            background-color: #4b4b4b;
+            background: linear-gradient(to right, #FFFFFF33, #0000FF);
             color: white;
-            padding: 15px 0;
+            padding: 8px 0;
             font-size: 14px;
             position: fixed;
             bottom: 0;
