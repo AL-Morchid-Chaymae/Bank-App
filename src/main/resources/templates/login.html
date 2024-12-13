@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Login - Goldencat Bank</title>
+    <title>Login - Pinkly Bank</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #000000, #ffd700);
+            background: linear-gradient(to right, #b76e79, #fff4e6); /* Rose gold background */
             color: #ffffff;
             margin: 0;
             padding: 0;
@@ -18,7 +18,8 @@
         }
 
         .navbar-custom {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #4b4b4b;
+            color: white; /* Gris gold */
             position: fixed;
             top: 0;
             width: 100%;
@@ -31,70 +32,89 @@
 
         .navbar-custom .navbar-brand {
             font-weight: bold;
+            font-size: 24px;
+            color: #ffd1dc;
+            font-family: 'Pacifico', cursive;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-custom .social-icons a {
-            color: #ffffff;
+            color: #ffd1dc;
             margin-left: 15px;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
         }
 
         .navbar-custom .social-icons a:hover {
-            color: #ffd700;
+            color: #ffb6c1;
+            transform: scale(1.2);
         }
 
         .container {
             max-width: 450px;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             position: relative;
             text-align: center;
         }
 
         .container h2 {
-            color: #ffffff;
+
+            color: #4b4b4b;
             margin-bottom: 20px;
+            font-weight: bold;
+            font-family: 'Pacifico', cursive;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
         }
 
         .form-group label {
-            color: #dddddd;
+            color: #fff;
             text-align: left;
             display: block;
+            font-weight: bold;
+            font-style: italic;
         }
 
         .form-group input {
-            border: 1px solid #ffd700;
-            background-color: #333;
-            color: #ffffff;
+            border: 1px solid #ffd1dc;
+            background-color: #fff;
+            color: #b76e79;
+            font-weight: bold;
         }
 
         .btn {
-            background-color: #ffd700;
+            background-color: #ffd1dc;
             border: none;
             color: black;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .btn:hover {
-            background-color: #ffc700;
+            background-color: #ffb6c1;
+            transform: scale(1.1);
         }
 
         .custom-link {
-            color: #ffd700;
+            color: black;  /* Noir */
             text-decoration: none;
             font-weight: bold;
         }
 
         .custom-link:hover {
-            color: #ffecb3;
+            color: white;  /* Blanc */
             text-decoration: underline;
         }
 
         .footer {
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: #4b4b4b;
             color: white;
             padding: 15px 0;
             font-size: 14px;
@@ -104,24 +124,16 @@
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-        }
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-custom">
-    <a class="navbar-brand" href="#">Goldencat Bank</a>
+    <a class="navbar-brand" href="#">Pinkly Bank</a>
     <div class="ml-auto social-icons">
-        <a href="https://www.youtube.com/@codewithgoldencat" target="_blank" title="YouTube">
+        <a href="https://youtube.com/@technoastuces?si=N4_73Lz0591FotNw" target="_blank" title="YouTube">
             <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://www.linkedin.com/in/code-with-goldecat-453460297/" target="_blank" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/chaymae-al-morchid-2a0128163/" target="_blank" title="LinkedIn">
             <i class="fab fa-linkedin"></i>
         </a>
     </div>
@@ -149,7 +161,7 @@
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2024 Code With Goldencat. All rights reserved. | <a href="#" class="custom-link">Privacy Policy</a> | <a href="#" class="custom-link">Terms of Service</a></p>
+    <p>&copy; 2024 Code With Pinkly. All rights reserved. | <a href="#" class="custom-link">Privacy Policy</a> | <a href="#" class="custom-link">Terms of Service</a></p>
 </footer>
 
 </body>
