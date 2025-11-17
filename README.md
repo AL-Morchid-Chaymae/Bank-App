@@ -88,11 +88,13 @@ spring.jpa.show-sql=true
 ```
 
 3️⃣ Run the project
-```mvn spring-boot:run
+```
+mvn spring-boot:run
 ```
 
 ###Then open:
-```http://localhost:8080
+```
+http://localhost:8080
 ```
 
 🌍 Deployment on Railway
