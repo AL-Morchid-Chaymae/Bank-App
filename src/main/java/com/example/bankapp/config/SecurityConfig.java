@@ -30,7 +30,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeRequests(authz -> authz
-                        .requestMatchers("/register", "/login", "/css/**", "/js/**", "/images/**").permitAll() // Utilisation de requestMatchers
+                        .requestMatchers("/register", "/login", "/css/**", "/js/**", "/img/**").permitAll() // Utilisation de requestMatchers
                         .anyRequest().authenticated() // Toutes les autres requêtes doivent être authentifiées
                 )
                 .formLogin(form -> form

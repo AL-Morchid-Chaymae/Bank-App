@@ -1,105 +1,54 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Transaction History - Goldencat Bank</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #000000, #ffd700);
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-        }
+    <title>Transactions – NovaBank</title>
+    <link rel="icon" type="image/png" href="/img/logo1.png">
 
-        .navbar-custom {
-            background-color: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        .navbar-custom a {
-            color: #ffffff !important;
-        }
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const icon = document.getElementById("mode-icon");
+            body.classList.toggle("dark-mode");
 
-        .navbar-custom .navbar-brand {
-            font-weight: bold;
+            if (body.classList.contains("dark-mode")) {
+                icon.classList.replace("fa-moon", "fa-sun");
+            } else {
+                icon.classList.replace("fa-sun", "fa-moon");
+            }
         }
-
-        .container {
-            max-width: 1000px;
-            margin-top: 80px;
-            text-align: center;
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        .table-custom {
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            overflow-x: auto;
-        }
-
-        .table-striped tbody tr:nth-of-type(odd) {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .table-striped td, .table-striped th {
-            color: #ffffff;
-            font-weight: bold;
-            padding: 15px;
-            border-bottom: 1px solid #ffd700;
-        }
-
-        .table-striped th {
-            background-color: rgba(255, 215, 0, 0.2);
-        }
-
-        .text-success {
-            color: #28a745 !important;
-        }
-
-        .text-danger {
-            color: #dc3545 !important;
-        }
-
-        .custom-link {
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .custom-link:hover {
-            color: #ffecb3;
-            text-decoration: underline;
-        }
-    </style>
+    </script>
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-custom">
-    <a class="navbar-brand" href="#">Goldencat Bank</a>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-        <li class="nav-item"><a class="nav-link" href="/transactions">Transactions</a></li>
-        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
-    </ul>
+
+<nav class="navbar navbar-custom d-flex justify-content-between align-items-center">
+
+    <a class="navbar-brand d-flex align-items-center" href="/dashboard">
+        <img src="/img/logo2.png" class="nav-logo">
+    </a>
+
+    <div class="d-flex align-items-center">
+        <ul class="navbar-nav d-flex flex-row mr-3">
+            <li class="nav-item mx-3"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+            <li class="nav-item mx-3"><a class="nav-link" href="/transactions">Transactions</a></li>
+            <li class="nav-item mx-3"><a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
+
+        <i id="mode-icon" class="fa-solid fa-moon mode-toggle" onclick="toggleMode()"></i>
+    </div>
+
 </nav>
 
-<div class="container">
-    <h2 class="text-center">Transaction History</h2>
-    <div class="table-responsive table-custom">
-        <table class="table table-striped">
+<div class="dashboard-wrapper">
+
+    <div class="table-custom">
+        <h3 class="text-center mb-4">Transaction History</h3>
+
+        <table class="table">
             <thead>
             <tr>
                 <th>ID</th>
@@ -108,22 +57,28 @@
                 <th>Date</th>
             </tr>
             </thead>
+
             <tbody>
-            <tr th:each="transaction : ${transactions}">
-                <td th:text="${transaction.id}"></td>
-                <td th:text="${transaction.type}"></td>
-                <td th:text="${transaction.amount}"
-                    th:classappend="${transaction.type.contains('Transfer In') || transaction.type == 'Deposit'} ? 'text-success' : 'text-danger'">
-                    <span th:text="${transaction.type.contains('Transfer In') || transaction.type == 'Deposit'} ? '+$' + transaction.amount : '-$' + transaction.amount"></span>
-                </td>
-                <td th:text="${transaction.timestamp}"></td>
+            <tr th:each="t : ${transactions}">
+                <td th:text="${t.id}"></td>
+                <td th:text="${t.type}"></td>
+                <td th:text="${t.amount}"
+                    th:classappend="${t.type.contains('Deposit') || t.type.contains('In')} ? 'text-success' : 'text-danger'"></td>
+                <td th:text="${t.timestamp}"></td>
             </tr>
             </tbody>
         </table>
     </div>
 
-    <p class="text-center"><a href="/dashboard" class="custom-link">Back to Dashboard</a></p>
+    <p class="text-center mt-3">
+        <a href="/dashboard">Back to Dashboard</a>
+    </p>
+
 </div>
+<br>
+<br>
+<br>
+<footer>© 2025 NovaBank. All rights reserved.</footer>
 
 </body>
 </html>

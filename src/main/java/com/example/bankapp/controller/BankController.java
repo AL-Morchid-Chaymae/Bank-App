@@ -73,12 +73,12 @@ public class BankController {
     }
 
 
-    @GetMapping("/transaction")
+    @GetMapping("/transactions")
     public String transactionHistory(Model model) {
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
         Account account = accountService.findAccountByUsername(username);
-        model.addAttribute("transaction", accountService.getTransactionHistory(account));
-        return "transaction";
+        model.addAttribute("transactions", accountService.getTransactionHistory(account));
+        return "transactions";
     }
 
     @PostMapping("/transfer")

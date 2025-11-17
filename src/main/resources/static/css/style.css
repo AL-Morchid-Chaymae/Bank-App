@@ -1,0 +1,380 @@
+/* ------------------------------------------------------------------
+   NOVABANK – GLOBAL PROFESSIONAL STYLE
+   ------------------------------------------------------------------ */
+
+/* ==================== GLOBAL ==================== */
+:root {
+    --primary: #0a3d62;
+    --primary-light: #0f4e7c;
+    --accent: #1e90ff;
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-light: #6b6b6b;
+    --radius: 12px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6fb;
+    margin: 0;
+    padding: 0;
+    color: #1a1a1a;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Fade animation */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(10px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+/* ===== DARK MODE ===== */
+.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: white !important;
+}
+
+.dark-mode .navbar-custom {
+    background-color: #0a2740 !important;
+}
+
+.dark-mode footer {
+    background-color: #0a2740 !important;
+}
+
+.dark-mode .btn-main {
+    background-color: #0d5c87 !important;
+}
+
+/* ===== ICON DARK/LIGHT MODE ===== */
+.mode-toggle {
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-right: 15px;
+}
+
+.mode-toggle:hover {
+    transform: rotate(20deg) scale(1.2);
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar-custom {
+    background: var(--primary);
+    padding: 14px 30px;
+    box-shadow: var(--shadow);
+}
+
+.navbar-custom .navbar-brand {
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .nav-link {
+    color: #dbe8f3 !important;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 15px;
+    transition: 0.2s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* ==================== FORM CONTAINERS ==================== */
+.card-form {
+    width: 450px;
+    margin: 80px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    animation: fadeIn 0.4s ease;
+}
+
+.card-form h2 {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 8px !important;
+    padding: 12px !important;
+    border: 1px solid #d0d7df;
+    transition: 0.2s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(10,61,98,0.15);
+}
+
+/* Buttons */
+.btn-main {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 12px;
+    border: none;
+    transition: 0.2s;
+}
+
+.btn-main:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ==================== DASHBOARD ==================== */
+.dashboard-wrapper {
+    max-width: 1100px;
+    margin: 120px auto;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius);
+    border: none;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    animation: fade 0.4s ease-in-out;
+    @keyframes fade {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+}
+
+/* ==================== ACTION BUTTONS ==================== */
+.bank-button {
+    background: var(--primary);
+    color: white;
+    padding: 12px;
+    border-radius: var(--radius);
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.bank-button:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+/* ==================== TABLES ==================== */
+.table-custom {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.table thead th {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+}
+
+.table tbody td {
+    padding: 12px;
+    font-weight: 500;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f1f4f8;
+}
+
+/* Colors for + / - */
+.text-success {
+    color: #28a745 !important;
+}
+.text-danger {
+    color: #dc3545 !important;
+}
+
+/* ==================== LINKS ==================== */
+.custom-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.custom-link:hover {
+    text-decoration: underline;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ======= GLOBAL BACKGROUND ======= */
+.bg-bank {
+    background-image: url('/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* ================= LOGO ================= */
+.logo-nav {
+    height: 38px;          /* taille moyenne */
+    width: auto;
+    margin-right: 8px;
+    filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2)); /* effet pro discret */
+}
+
+/* Logo */
+.logo-small {
+    height: 68px;
+    margin-right: 10px;
+}
+
+
+.navbar-brand span {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+
+/* Dark mode button */
+.btn-darkmode {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 5px 12px;
+    cursor: pointer;
+    color: white;
+}
+.btn-darkmode:hover {
+    background: rgba(255,255,255,0.1);
+}
+/* ================= DASHBOARD LAYOUT ================= */
+.dashboard-wrapper {
+    max-width: 1100px;
+    margin: 120px auto;
+}
+
+/* ================= TABLE (Transactions) ================= */
+.table-custom {
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.table thead th {
+    background: #0a3d62;
+    color: white;
+    border: none;
+}
+.table tbody tr:nth-child(even) {
+    background: #f0f4fa;
+}
+
+/* ================= FOOTER ================= */
+.footer-small {
+    background: #0a3d62;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+/* NAV LOGO */
+.nav-logo {
+    height: 48px;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background: #1a1a1a !important;
+    color: #e8e8e8 !important;
+}
+
+.dark-mode .navbar-custom {
+    background: #111 !important;
+    box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+}
+
+.dark-mode .card,
+.dark-mode .table-custom {
+    background: #222 !important;
+    color: #e8e8e8 !important;
+}
+
+.dark-mode .table thead th {
+    background: #333 !important;
+}
+
+.dark-mode .nav-link {
+    color: #aad4ff !important;
+}
+
+.dark-mode footer {
+    background: #111 !important;
+}
+
+
+/* ===== BACKGROUND BLUR FOR LOGIN & REGISTER ===== */
+.bg-bank {
+    background: url("/img/background.jpg") no-repeat center center/cover;
+    height: 100vh;
+    position: relative;
+}
+
+/* Blur overlay */
+.bg-bank::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px); /* intensité du flou */
+    background-color: rgba(0, 0, 0, 0.35); /* assombri léger */
+    z-index: 0;
+}
+
+/* Ensures the form appears on top */
+.card-form {
+    position: relative;
+    z-index: 1;
+}
+
+
